@@ -1,0 +1,109 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@theme {
+  --font-sans: "Helvetica Neue", Arial, sans-serif;
+  --font-heading: "Helvetica Neue", Arial, sans-serif;
+
+  --color-background: #F2F2F2;
+  --color-foreground: #1A1A1A;
+  --color-card: #FFFFFF;
+  --color-card-foreground: #1A1A1A;
+  --color-popover: #FFFFFF;
+  --color-popover-foreground: #1A1A1A;
+  
+  --color-primary: #000000;
+  --color-primary-foreground: #FFFFFF;
+  
+  --color-secondary: #E7FF4D;
+  --color-secondary-foreground: #000000;
+  
+  --color-muted: #DDDDDD;
+  --color-muted-foreground: rgba(26, 26, 26, 0.6);
+  
+  --color-accent: #E7FF4D;
+  --color-accent-foreground: #000000;
+  
+  --color-destructive: #FF4444;
+  --color-destructive-foreground: #FFFFFF;
+  
+  --color-border: #000000;
+  --color-input: #000000;
+  --color-ring: #000000;
+  
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 24px;
+}
+
+:root {
+  --background: #F2F2F2;
+  --foreground: #1A1A1A;
+  --card: #FFFFFF;
+  --card-foreground: #1A1A1A;
+  --popover: #FFFFFF;
+  --popover-foreground: #1A1A1A;
+  --primary: #000000;
+  --primary-foreground: #FFFFFF;
+  --secondary: #E7FF4D;
+  --secondary-foreground: #000000;
+  --muted: #DDDDDD;
+  --muted-foreground: rgba(26, 26, 26, 0.6);
+  --accent: #E7FF4D;
+  --accent-foreground: #000000;
+  --destructive: #FF4444;
+  --destructive-foreground: #FFFFFF;
+  --border: #000000;
+  --input: #000000;
+  --ring: #000000;
+  --radius: 24px;
+}
+
+.dark {
+  --background: #0A0A0A;
+  --foreground: #F2F2F2;
+  --card: #1A1A1A;
+  --card-foreground: #F2F2F2;
+  --primary: #E7FF4D;
+  --primary-foreground: #000000;
+  --accent: #E7FF4D;
+  --accent-foreground: #000000;
+  --border: #F2F2F2;
+  --input: #F2F2F2;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tighter;
+  }
+}
+
+@layer components {
+  .bento-card {
+    @apply bg-card border-[1.5px] border-border rounded-[24px] p-6 shadow-none transition-all duration-200;
+  }
+  .bento-card-hero {
+    @apply bg-accent text-accent-foreground;
+  }
+  .bento-pill {
+    @apply bg-primary text-primary-foreground px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider inline-block;
+  }
+  .bento-label {
+    @apply text-[12px] uppercase font-bold tracking-widest opacity-60 mb-3 block;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
