@@ -10,6 +10,7 @@ import {
   ShieldCheck,
   ArrowRight,
   CheckCircle2,
+  Sparkles,
   Facebook,
   Twitter,
   Instagram,
@@ -87,9 +88,13 @@ const LandingPage = () => {
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-5xl font-black tracking-tighter text-black md:text-7xl leading-[0.9]"
+              className="text-5xl font-black tracking-tighter text-black md:text-7xl leading-[0.9] flex flex-col"
             >
-              Manage Your <br />Zawiyah <span className="opacity-40">Smartly</span>
+              <span className="flex items-center gap-4">
+                <Sparkles className="w-10 h-10 md:w-16 md:h-16 text-black opacity-20" />
+                Manage Your
+              </span>
+              Zawiyah <span className="opacity-40">Smartly</span>
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -117,14 +122,26 @@ const LandingPage = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.3 }}
-              className="relative"
+              className="relative group"
             >
+              <div className="absolute -inset-4 bg-black/5 rounded-[40px] blur-2xl group-hover:bg-black/10 transition-all duration-500" />
               <img 
-                src="https://picsum.photos/seed/dashboard/800/600" 
-                alt="Dashboard Preview" 
-                className="relative rounded-2xl border-[1.5px] border-black shadow-none"
+                src="https://images.unsplash.com/photo-1542751110-97646af1f56d?q=80&w=1200&auto=format&fit=crop" 
+                alt="Zawiyah Institution Landscape" 
+                className="relative rounded-[32px] border-[1.5px] border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] w-full object-cover aspect-[4/3] lg:aspect-square"
                 referrerPolicy="no-referrer"
               />
+              <div className="absolute -bottom-6 -left-6 bento-card bg-white p-4 hidden md:block w-48 shadow-lg border-black">
+                <div className="flex items-center space-x-2 mb-2">
+                  <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                  <span className="text-[10px] font-black uppercase tracking-tighter">System Online</span>
+                </div>
+                <div className="text-xl font-black tracking-tighter">2.4k+</div>
+                <div className="text-[8px] font-bold uppercase opacity-60">Active Students</div>
+              </div>
+              <div className="absolute top-4 right-4 bento-pill bg-white/90 backdrop-blur-md text-black border-black font-black uppercase text-[10px] tracking-widest">
+                Established 1998
+              </div>
             </motion.div>
           </div>
         </section>
